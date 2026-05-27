@@ -5,7 +5,7 @@
  * @package Marginminds
  */
 
-namespace Gst\Marginminds\Tax_Admin;
+namespace Marginminds\Gst\Tax_Admin;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -17,12 +17,12 @@ class Ajax_Endpoint {
 	/**
 	 * AJAX action name for saving settings.
 	 */
-	public const SAVE_ACTION = 'gst_marginminds_save_settings';
+	public const SAVE_ACTION = 'marginminds_gst_save_settings';
 
 	/**
 	 * WordPress option key for plugin settings.
 	 */
-	private const OPTION_KEY = 'gst_marginminds_settings';
+	private const OPTION_KEY = 'marginminds_gst_settings';
 
 	/**
 	 * Register hooks for AJAX.
@@ -40,7 +40,7 @@ class Ajax_Endpoint {
 	 * @return void
 	 */
 	public function handle_save(): void {
-		if ( ! check_ajax_referer( 'gst_marginminds_form_nonce', 'nonce', false ) ) {
+		if ( ! check_ajax_referer( 'marginminds_gst_form_nonce', 'nonce', false ) ) {
 			wp_send_json_error( array( 'message' => __( 'Security check failed.', 'marginminds-gst' ) ), 403 );
 			return;
 		}

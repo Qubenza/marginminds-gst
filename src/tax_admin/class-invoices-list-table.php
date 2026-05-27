@@ -5,10 +5,10 @@
  * @package Marginminds
  */
 
-namespace Gst\Marginminds\Tax_Admin;
+namespace Marginminds\Gst\Tax_Admin;
 
-use Gst\Marginminds\Invoice\Invoice_Generator;
-use Gst\Marginminds\Orders\Order_Meta;
+use Marginminds\Gst\Invoice\Invoice_Generator;
+use Marginminds\Gst\Orders\Order_Meta;
 
 defined( 'ABSPATH' ) || exit;
 

@@ -5,9 +5,9 @@
  * @package Marginminds
  */
 
-namespace Gst\Marginminds\Blocks;
+namespace Marginminds\Gst\Blocks;
 
-use Gst\Marginminds\GST\Tax_Manager;
+use Marginminds\Gst\GST\Tax_Manager;
 
 defined( 'ABSPATH' ) || exit;
 

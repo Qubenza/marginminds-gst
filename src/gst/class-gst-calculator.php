@@ -5,7 +5,7 @@
  * @package Marginminds
  */
 
-namespace Gst\Marginminds\GST;
+namespace Marginminds\Gst\GST;
 
 defined( 'ABSPATH' ) || exit;
 

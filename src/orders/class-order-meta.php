@@ -5,10 +5,10 @@
  * @package Marginminds
  */
 
-namespace Gst\Marginminds\Orders;
+namespace Marginminds\Gst\Orders;
 
-use Gst\Marginminds\GST\GST_Calculator;
-use Gst\Marginminds\GST\Tax_Manager;
+use Marginminds\Gst\GST\GST_Calculator;
+use Marginminds\Gst\GST\Tax_Manager;
 
 defined( 'ABSPATH' ) || exit;
 

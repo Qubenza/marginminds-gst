@@ -13,23 +13,23 @@
  * @package Marginminds
  */
 
-use Gst\Marginminds\GST\GST_Calculator;
+use Marginminds\Gst\GST\GST_Calculator;
 
 defined( 'ABSPATH' ) || exit;
 
-$mm_gst_order_date       = $order->get_date_created();
-$mm_gst_formatted_date   = $mm_gst_order_date instanceof \WC_DateTime ? $mm_gst_order_date->date_i18n( wc_date_format() ) : '';
-$mm_gst_billing_address  = $order->get_formatted_billing_address();
-$mm_gst_shipping_address = $order->get_formatted_shipping_address();
+$marginminds_gst_order_date       = $order->get_date_created();
+$marginminds_gst_formatted_date   = $marginminds_gst_order_date instanceof \WC_DateTime ? $marginminds_gst_order_date->date_i18n( wc_date_format() ) : '';
+$marginminds_gst_billing_address  = $order->get_formatted_billing_address();
+$marginminds_gst_shipping_address = $order->get_formatted_shipping_address();
 
-$mm_gst_total              = (float) ( $breakdown['cgst'] + $breakdown['sgst'] + $breakdown['igst'] );
-$mm_gst_shipping_gst_total = (float) ( $breakdown['shipping_cgst'] + $breakdown['shipping_sgst'] + $breakdown['shipping_igst'] );
-$mm_gst_rate               = (float) $breakdown['rate'];
-$mm_gst_half               = $mm_gst_rate / 2;
-$mm_gst_tax_type           = (string) $breakdown['tax_type'];
+$marginminds_gst_total              = (float) ( $breakdown['cgst'] + $breakdown['sgst'] + $breakdown['igst'] );
+$marginminds_gst_shipping_gst_total = (float) ( $breakdown['shipping_cgst'] + $breakdown['shipping_sgst'] + $breakdown['shipping_igst'] );
+$marginminds_gst_rate               = (float) $breakdown['rate'];
+$marginminds_gst_half               = $marginminds_gst_rate / 2;
+$marginminds_gst_tax_type           = (string) $breakdown['tax_type'];
 
-$mm_gst_calculator   = new GST_Calculator();
-$mm_gst_has_gst_cols = $mm_gst_total > 0;
+$marginminds_gst_calculator   = new GST_Calculator();
+$marginminds_gst_has_gst_cols = $marginminds_gst_total > 0;
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -78,7 +78,7 @@ $mm_gst_has_gst_cols = $mm_gst_total > 0;
 				</tr>
 				<tr>
 					<td><?php esc_html_e( 'Invoice Date', 'marginminds-gst' ); ?></td>
-					<td><?php echo esc_html( $mm_gst_formatted_date ); ?></td>
+					<td><?php echo esc_html( $marginminds_gst_formatted_date ); ?></td>
 				</tr>
 				<tr>
 					<td><?php esc_html_e( 'Order No.', 'marginminds-gst' ); ?></td>
@@ -93,7 +93,7 @@ $mm_gst_has_gst_cols = $mm_gst_total > 0;
 		<div class="inv-party">
 			<h3><?php esc_html_e( 'Billed To', 'marginminds-gst' ); ?></h3>
 			<address>
-				<?php echo wp_kses_post( '' !== $mm_gst_billing_address ? $mm_gst_billing_address : esc_html__( '—', 'marginminds-gst' ) ); ?>
+				<?php echo wp_kses_post( '' !== $marginminds_gst_billing_address ? $marginminds_gst_billing_address : esc_html__( '—', 'marginminds-gst' ) ); ?>
 				<?php if ( '' !== $customer_gstin && $settings['show_gstin_on_invoice'] ) : ?>
 				<br>
 					<?php echo esc_html( sprintf( /* translators: %s: Customer GSTIN */ __( 'GSTIN: %s', 'marginminds-gst' ), $customer_gstin ) ); ?>
@@ -101,10 +101,10 @@ $mm_gst_has_gst_cols = $mm_gst_total > 0;
 			</address>
 		</div>
 
-		<?php if ( '' !== $mm_gst_shipping_address && $mm_gst_shipping_address !== $mm_gst_billing_address ) : ?>
+		<?php if ( '' !== $marginminds_gst_shipping_address && $marginminds_gst_shipping_address !== $marginminds_gst_billing_address ) : ?>
 		<div class="inv-party">
 			<h3><?php esc_html_e( 'Shipped To', 'marginminds-gst' ); ?></h3>
-			<address><?php echo wp_kses_post( $mm_gst_shipping_address ); ?></address>
+			<address><?php echo wp_kses_post( $marginminds_gst_shipping_address ); ?></address>
 		</div>
 		<?php endif; ?>
 	</div>
@@ -118,17 +118,17 @@ $mm_gst_has_gst_cols = $mm_gst_total > 0;
 				<th class="col-qty"><?php esc_html_e( 'Qty', 'marginminds-gst' ); ?></th>
 				<th class="col-rate"><?php esc_html_e( 'Rate', 'marginminds-gst' ); ?></th>
 				<th class="col-taxable"><?php esc_html_e( 'Taxable Amt', 'marginminds-gst' ); ?></th>
-				<?php if ( $mm_gst_has_gst_cols ) : ?>
-					<?php if ( GST_Calculator::TYPE_CGST_SGST === $mm_gst_tax_type ) : ?>
+				<?php if ( $marginminds_gst_has_gst_cols ) : ?>
+					<?php if ( GST_Calculator::TYPE_CGST_SGST === $marginminds_gst_tax_type ) : ?>
 					<th class="col-cgst">
-						<?php echo esc_html( sprintf( /* translators: %s: half GST rate */ __( 'CGST (%s%%)', 'marginminds-gst' ), $mm_gst_half ) ); ?>
+						<?php echo esc_html( sprintf( /* translators: %s: half GST rate */ __( 'CGST (%s%%)', 'marginminds-gst' ), $marginminds_gst_half ) ); ?>
 					</th>
 					<th class="col-sgst">
-						<?php echo esc_html( sprintf( /* translators: %s: half GST rate */ __( 'SGST (%s%%)', 'marginminds-gst' ), $mm_gst_half ) ); ?>
+						<?php echo esc_html( sprintf( /* translators: %s: half GST rate */ __( 'SGST (%s%%)', 'marginminds-gst' ), $marginminds_gst_half ) ); ?>
 					</th>
 					<?php else : ?>
 					<th class="col-igst">
-						<?php echo esc_html( sprintf( /* translators: %s: full GST rate */ __( 'IGST (%s%%)', 'marginminds-gst' ), $mm_gst_rate ) ); ?>
+						<?php echo esc_html( sprintf( /* translators: %s: full GST rate */ __( 'IGST (%s%%)', 'marginminds-gst' ), $marginminds_gst_rate ) ); ?>
 					</th>
 					<?php endif; ?>
 				<?php endif; ?>
@@ -137,46 +137,46 @@ $mm_gst_has_gst_cols = $mm_gst_total > 0;
 		</thead>
 		<tbody>
 			<?php
-			$mm_gst_row_num = 0;
-			foreach ( $order->get_items() as $mm_gst_item_id => $mm_gst_item ) :
-				$mm_gst_product = $mm_gst_item->get_product();
-				++$mm_gst_row_num;
-				$mm_gst_qty        = $mm_gst_item->get_quantity();
-				$mm_gst_line_total = (float) $mm_gst_item->get_total();
-				$mm_gst_unit_price = $mm_gst_qty > 0 ? $mm_gst_line_total / $mm_gst_qty : 0.0;
+			$marginminds_gst_row_num = 0;
+			foreach ( $order->get_items() as $marginminds_gst_item_id => $marginminds_gst_item ) :
+				$marginminds_gst_product = $marginminds_gst_item->get_product();
+				++$marginminds_gst_row_num;
+				$marginminds_gst_qty        = $marginminds_gst_item->get_quantity();
+				$marginminds_gst_line_total = (float) $marginminds_gst_item->get_total();
+				$marginminds_gst_unit_price = $marginminds_gst_qty > 0 ? $marginminds_gst_line_total / $marginminds_gst_qty : 0.0;
 
-				$mm_gst_item_is_taxable = $mm_gst_product instanceof \WC_Product && 'none' !== $mm_gst_product->get_tax_status();
-				$mm_gst_item_gst        = array(
-					'taxable_amount' => $mm_gst_line_total,
+				$marginminds_gst_item_is_taxable = $marginminds_gst_product instanceof \WC_Product && 'none' !== $marginminds_gst_product->get_tax_status();
+				$marginminds_gst_item_gst        = array(
+					'taxable_amount' => $marginminds_gst_line_total,
 					'cgst'           => 0.0,
 					'sgst'           => 0.0,
 					'igst'           => 0.0,
 					'tax_amount'     => 0.0,
 				);
-				if ( $mm_gst_has_gst_cols && $mm_gst_item_is_taxable && $mm_gst_line_total > 0 ) {
-					$mm_gst_item_gst = $mm_gst_calculator->calculate( $mm_gst_line_total, $mm_gst_rate, $mm_gst_tax_type, false );
+				if ( $marginminds_gst_has_gst_cols && $marginminds_gst_item_is_taxable && $marginminds_gst_line_total > 0 ) {
+					$marginminds_gst_item_gst = $marginminds_gst_calculator->calculate( $marginminds_gst_line_total, $marginminds_gst_rate, $marginminds_gst_tax_type, false );
 				}
 				?>
 			<tr>
-				<td><?php echo esc_html( $mm_gst_row_num ); ?></td>
+				<td><?php echo esc_html( $marginminds_gst_row_num ); ?></td>
 				<td>
-					<?php echo esc_html( $mm_gst_item->get_name() ); ?>
-					<?php if ( $mm_gst_product instanceof \WC_Product && '' !== $mm_gst_product->get_sku() ) : ?>
-					<br><small><?php echo esc_html( sprintf( /* translators: %s: Product SKU */ __( 'SKU: %s', 'marginminds-gst' ), $mm_gst_product->get_sku() ) ); ?></small>
+					<?php echo esc_html( $marginminds_gst_item->get_name() ); ?>
+					<?php if ( $marginminds_gst_product instanceof \WC_Product && '' !== $marginminds_gst_product->get_sku() ) : ?>
+					<br><small><?php echo esc_html( sprintf( /* translators: %s: Product SKU */ __( 'SKU: %s', 'marginminds-gst' ), $marginminds_gst_product->get_sku() ) ); ?></small>
 					<?php endif; ?>
 				</td>
-				<td class="col-qty"><?php echo esc_html( $mm_gst_qty ); ?></td>
-				<td class="col-rate"><?php echo wp_kses_post( wc_price( $mm_gst_unit_price ) ); ?></td>
-				<td class="col-taxable"><?php echo wp_kses_post( wc_price( $mm_gst_item_gst['taxable_amount'] ) ); ?></td>
-				<?php if ( $mm_gst_has_gst_cols ) : ?>
-					<?php if ( GST_Calculator::TYPE_CGST_SGST === $mm_gst_tax_type ) : ?>
-					<td class="col-cgst"><?php echo wp_kses_post( wc_price( $mm_gst_item_gst['cgst'] ) ); ?></td>
-					<td class="col-sgst"><?php echo wp_kses_post( wc_price( $mm_gst_item_gst['sgst'] ) ); ?></td>
+				<td class="col-qty"><?php echo esc_html( $marginminds_gst_qty ); ?></td>
+				<td class="col-rate"><?php echo wp_kses_post( wc_price( $marginminds_gst_unit_price ) ); ?></td>
+				<td class="col-taxable"><?php echo wp_kses_post( wc_price( $marginminds_gst_item_gst['taxable_amount'] ) ); ?></td>
+				<?php if ( $marginminds_gst_has_gst_cols ) : ?>
+					<?php if ( GST_Calculator::TYPE_CGST_SGST === $marginminds_gst_tax_type ) : ?>
+					<td class="col-cgst"><?php echo wp_kses_post( wc_price( $marginminds_gst_item_gst['cgst'] ) ); ?></td>
+					<td class="col-sgst"><?php echo wp_kses_post( wc_price( $marginminds_gst_item_gst['sgst'] ) ); ?></td>
 					<?php else : ?>
-					<td class="col-igst"><?php echo wp_kses_post( wc_price( $mm_gst_item_gst['igst'] ) ); ?></td>
+					<td class="col-igst"><?php echo wp_kses_post( wc_price( $marginminds_gst_item_gst['igst'] ) ); ?></td>
 					<?php endif; ?>
 				<?php endif; ?>
-				<td class="col-total"><?php echo wp_kses_post( wc_price( $mm_gst_line_total + $mm_gst_item_gst['tax_amount'] ) ); ?></td>
+				<td class="col-total"><?php echo wp_kses_post( wc_price( $marginminds_gst_line_total + $marginminds_gst_item_gst['tax_amount'] ) ); ?></td>
 			</tr>
 			<?php endforeach; ?>
 		</tbody>
@@ -197,12 +197,12 @@ $mm_gst_has_gst_cols = $mm_gst_total > 0;
 			</tr>
 			<?php endif; ?>
 
-			<?php if ( $mm_gst_total > 0 ) : ?>
+			<?php if ( $marginminds_gst_total > 0 ) : ?>
 				<tr>
 					<td><?php esc_html_e( 'Taxable Amount', 'marginminds-gst' ); ?></td>
 					<td><?php echo wp_kses_post( wc_price( (float) $breakdown['taxable_amount'] ) ); ?></td>
 				</tr>
-				<?php if ( GST_Calculator::TYPE_CGST_SGST === $mm_gst_tax_type ) : ?>
+				<?php if ( GST_Calculator::TYPE_CGST_SGST === $marginminds_gst_tax_type ) : ?>
 				<tr>
 					<td>
 						<?php
@@ -210,7 +210,7 @@ $mm_gst_has_gst_cols = $mm_gst_total > 0;
 							sprintf(
 								/* translators: %s: GST half-rate as a number, e.g. 9 */
 								__( 'CGST (%s%%)', 'marginminds-gst' ),
-								$mm_gst_half
+								$marginminds_gst_half
 							)
 						);
 						?>
@@ -224,7 +224,7 @@ $mm_gst_has_gst_cols = $mm_gst_total > 0;
 							sprintf(
 								/* translators: %s: GST half-rate as a number, e.g. 9 */
 								__( 'SGST (%s%%)', 'marginminds-gst' ),
-								$mm_gst_half
+								$marginminds_gst_half
 							)
 						);
 						?>
@@ -239,7 +239,7 @@ $mm_gst_has_gst_cols = $mm_gst_total > 0;
 							sprintf(
 								/* translators: %s: GST rate as a number, e.g. 18 */
 								__( 'IGST (%s%%)', 'marginminds-gst' ),
-								$mm_gst_rate
+								$marginminds_gst_rate
 							)
 						);
 						?>
@@ -249,12 +249,12 @@ $mm_gst_has_gst_cols = $mm_gst_total > 0;
 				<?php endif; ?>
 			<?php endif; ?>
 
-			<?php if ( $mm_gst_shipping_gst_total > 0 ) : ?>
+			<?php if ( $marginminds_gst_shipping_gst_total > 0 ) : ?>
 				<tr>
 					<td><?php esc_html_e( 'Taxable Amount (Shipping)', 'marginminds-gst' ); ?></td>
 					<td><?php echo wp_kses_post( wc_price( (float) $breakdown['shipping_taxable_amount'] ) ); ?></td>
 				</tr>
-				<?php if ( GST_Calculator::TYPE_CGST_SGST === $mm_gst_tax_type ) : ?>
+				<?php if ( GST_Calculator::TYPE_CGST_SGST === $marginminds_gst_tax_type ) : ?>
 				<tr>
 					<td>
 						<?php
@@ -262,7 +262,7 @@ $mm_gst_has_gst_cols = $mm_gst_total > 0;
 							sprintf(
 								/* translators: %s: GST half-rate as a number, e.g. 9 */
 								__( 'CGST on Shipping (%s%%)', 'marginminds-gst' ),
-								$mm_gst_half
+								$marginminds_gst_half
 							)
 						);
 						?>
@@ -276,7 +276,7 @@ $mm_gst_has_gst_cols = $mm_gst_total > 0;
 							sprintf(
 								/* translators: %s: GST half-rate as a number, e.g. 9 */
 								__( 'SGST on Shipping (%s%%)', 'marginminds-gst' ),
-								$mm_gst_half
+								$marginminds_gst_half
 							)
 						);
 						?>
@@ -291,7 +291,7 @@ $mm_gst_has_gst_cols = $mm_gst_total > 0;
 							sprintf(
 								/* translators: %s: GST rate as a number, e.g. 18 */
 								__( 'IGST on Shipping (%s%%)', 'marginminds-gst' ),
-								$mm_gst_rate
+								$marginminds_gst_rate
 							)
 						);
 						?>

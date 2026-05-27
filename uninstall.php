@@ -12,4 +12,4 @@ if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
 
-delete_option( 'gst_marginminds_settings' );
+delete_option( 'marginminds_gst_settings' );

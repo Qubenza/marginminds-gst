@@ -44,9 +44,9 @@ if ( ! defined( 'GST_MM_URL' ) ) {
 /**
  * Composer autoloader (preferred).
  */
-$mm_gst_autoloader = GST_MM_DIR . 'vendor/autoload.php';
-if ( file_exists( $mm_gst_autoloader ) ) {
-	require_once $mm_gst_autoloader;
+$marginminds_gst_autoloader = GST_MM_DIR . 'vendor/autoload.php';
+if ( file_exists( $marginminds_gst_autoloader ) ) {
+	require_once $marginminds_gst_autoloader;
 } else {
 	/**
 	 * Fallback PSR-4 autoloader for the plugin namespace.
@@ -59,7 +59,7 @@ if ( file_exists( $mm_gst_autoloader ) ) {
 	 */
 	spl_autoload_register(
 		function ( $class_name ) {
-			$prefix = 'Gst\\Marginminds\\';
+			$prefix = 'Marginminds\\Gst\\';
 
 			/* Only handle classes in our namespace. */
 			if ( 0 !== strpos( $class_name, $prefix ) ) {
@@ -106,7 +106,7 @@ if ( file_exists( $mm_gst_autoloader ) ) {
  *
  * @return void
  */
-function gst_marginminds_missing_woocommerce_notice(): void {
+function marginminds_gst_missing_woocommerce_notice(): void {
 	echo '<div class="notice notice-error"><p>' .
 		esc_html__( 'GstMarginminds requires WooCommerce to be installed and active.', 'marginminds-gst' ) .
 		'</p></div>';
@@ -117,15 +117,15 @@ function gst_marginminds_missing_woocommerce_notice(): void {
  *
  * @return void
  */
-function gst_marginminds_bootstrap(): void {
+function marginminds_gst_bootstrap(): void {
 	if ( ! class_exists( 'WooCommerce' ) ) {
-		add_action( 'admin_notices', 'gst_marginminds_missing_woocommerce_notice' );
+		add_action( 'admin_notices', 'marginminds_gst_missing_woocommerce_notice' );
 		return;
 	}
 
-	if ( class_exists( 'Gst\\Marginminds\\Plugin' ) ) {
-		Gst\Marginminds\Plugin::instance()->init();
+	if ( class_exists( 'Marginminds\\Gst\\Plugin' ) ) {
+		Marginminds\Gst\Plugin::instance()->init();
 	}
 }
 
-add_action( 'plugins_loaded', 'gst_marginminds_bootstrap', 10 );
+add_action( 'plugins_loaded', 'marginminds_gst_bootstrap', 10 );

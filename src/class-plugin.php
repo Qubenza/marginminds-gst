@@ -5,7 +5,7 @@
  * @package Marginminds
  */
 
-namespace Gst\Marginminds;
+namespace Marginminds\Gst;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -65,7 +65,7 @@ class Plugin {
 	 * @return void
 	 */
 	private function register_admin_page(): void {
-		$admin_class = 'Gst\\Marginminds\\Tax_Admin\\Admin_Page';
+		$admin_class = 'Marginminds\\Gst\\Tax_Admin\\Admin_Page';
 		if ( class_exists( $admin_class ) ) {
 			$admin_page = new $admin_class();
 			$admin_page->register();
@@ -80,7 +80,7 @@ class Plugin {
 	 * @return void
 	 */
 	private function register_ajax_endpoints(): void {
-		$ajax_class = 'Gst\\Marginminds\\Tax_Admin\\Ajax_Endpoint';
+		$ajax_class = 'Marginminds\\Gst\\Tax_Admin\\Ajax_Endpoint';
 
 		if ( class_exists( $ajax_class ) ) {
 			$ajax = new $ajax_class();
@@ -94,7 +94,7 @@ class Plugin {
 	 * @return void
 	 */
 	private function register_tax_manager(): void {
-		$manager_class = 'Gst\\Marginminds\\GST\\Tax_Manager';
+		$manager_class = 'Marginminds\\Gst\\GST\\Tax_Manager';
 
 		if ( class_exists( $manager_class ) ) {
 			$manager = new $manager_class();
@@ -108,7 +108,7 @@ class Plugin {
 	 * @return void
 	 */
 	private function register_checkout_fields(): void {
-		$fields_class = 'Gst\\Marginminds\\Checkout\\Checkout_Fields';
+		$fields_class = 'Marginminds\\Gst\\Checkout\\Checkout_Fields';
 
 		if ( class_exists( $fields_class ) ) {
 			$fields = new $fields_class();
@@ -122,7 +122,7 @@ class Plugin {
 	 * @return void
 	 */
 	private function register_order_meta(): void {
-		$meta_class = 'Gst\\Marginminds\\Orders\\Order_Meta';
+		$meta_class = 'Marginminds\\Gst\\Orders\\Order_Meta';
 
 		if ( class_exists( $meta_class ) ) {
 			$meta = new $meta_class();
@@ -136,7 +136,7 @@ class Plugin {
 	 * @return void
 	 */
 	private function register_display(): void {
-		$display_class = 'Gst\\Marginminds\\Frontend\\Display';
+		$display_class = 'Marginminds\\Gst\\Frontend\\Display';
 
 		if ( class_exists( $display_class ) ) {
 			$display = new $display_class();
@@ -150,7 +150,7 @@ class Plugin {
 	 * @return void
 	 */
 	private function register_invoice_manager(): void {
-		$invoice_class = 'Gst\\Marginminds\\Invoice\\Invoice_Manager';
+		$invoice_class = 'Marginminds\\Gst\\Invoice\\Invoice_Manager';
 
 		if ( class_exists( $invoice_class ) ) {
 			$invoice = new $invoice_class();
@@ -164,7 +164,7 @@ class Plugin {
 	 * @return void
 	 */
 	private function register_cart_block_integration(): void {
-		$integration_class = 'Gst\\Marginminds\\Blocks\\Cart_Block_Integration';
+		$integration_class = 'Marginminds\\Gst\\Blocks\\Cart_Block_Integration';
 
 		if ( class_exists( $integration_class ) ) {
 			$integration = new $integration_class();

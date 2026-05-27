@@ -5,9 +5,9 @@
  * @package Marginminds
  */
 
-namespace Gst\Marginminds\Invoice;
+namespace Marginminds\Gst\Invoice;
 
-use Gst\Marginminds\GST\Tax_Manager;
+use Marginminds\Gst\GST\Tax_Manager;
 
 defined( 'ABSPATH' ) || exit;
 

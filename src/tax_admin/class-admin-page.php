@@ -5,7 +5,7 @@
  * @package Marginminds
  */
 
-namespace Gst\Marginminds\Tax_Admin;
+namespace Marginminds\Gst\Tax_Admin;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -131,7 +131,7 @@ class Admin_Page {
 			'GstMarginminds',
 			array(
 				'ajax_url' => admin_url( 'admin-ajax.php' ),
-				'nonce'    => wp_create_nonce( 'gst_marginminds_form_nonce' ),
+				'nonce'    => wp_create_nonce( 'marginminds_gst_form_nonce' ),
 			)
 		);
 	}

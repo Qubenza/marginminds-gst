@@ -136,7 +136,7 @@ function App({ saveAction, initialSettings }) {
     setSaving(true);
     try {
       const formData = new FormData();
-      formData.append('action', saveAction || 'gst_marginminds_save_settings');
+      formData.append('action', saveAction || 'marginminds_gst_save_settings');
       formData.append('nonce', GstMarginminds.nonce || '');
       formData.append('settings', JSON.stringify(settings));
       const response = await fetch(GstMarginminds.ajax_url || '/wp-admin/admin-ajax.php', {

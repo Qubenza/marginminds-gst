@@ -4,17 +4,17 @@
  *
  * Variables:
  *  - $initial_data : array The server-fetched (sanitized) data snapshot.
- *  - $this         : Gst\Marginminds\Tax_Admin\Admin_Page instance (so $this->render_table() is available).
+ *  - $this         : Marginminds\Gst\Tax_Admin\Admin_Page instance (so $this->render_table() is available).
  *
  * Note: This template is intentionally presentational only — no business logic here.
  *
  * @var array $initial_data
- * @var Gst\Marginminds\Tax_Admin\Admin_Page $this
+ * @var Marginminds\Gst\Tax_Admin\Admin_Page $this
  *
  * @package Marginminds
  */
 
-use Gst\Marginminds\Tax_Admin\Ajax_Endpoint;
+use Marginminds\Gst\Tax_Admin\Ajax_Endpoint;
 
 defined( 'ABSPATH' ) || exit;
 ?>

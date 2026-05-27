@@ -5,9 +5,9 @@
  * @package Marginminds
  */
 
-namespace Gst\Marginminds\Checkout;
+namespace Marginminds\Gst\Checkout;
 
-use Gst\Marginminds\Tax_Admin\Ajax_Endpoint;
+use Marginminds\Gst\Tax_Admin\Ajax_Endpoint;
 
 defined( 'ABSPATH' ) || exit;
 
