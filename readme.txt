@@ -17,6 +17,9 @@ MarginMinds GST helps Indian WooCommerce store owners handle GST effortlessly.
 
 Configure your business GSTIN, apply CGST/SGST or IGST, collect customer GSTIN at checkout, and generate GST-compliant PDF invoices — all from a single, easy-to-use settings panel.
 
+== Source Code ==
+The full source code is available at: https://github.com/Qubenza/marginminds-gst
+
 **Free Features:**
 
 * Configure business GSTIN and legal name
