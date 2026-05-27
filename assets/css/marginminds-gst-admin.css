@@ -1,0 +1,5 @@
+.marginminds-admin{margin-top: 20px;}
+.marginminds-admin h2{padding: 10px !important;}
+.marginminds-admin #marginminds-settings {margin-top: 25px;}
+.marginminds-admin-settings input{ padding: 16px 14px !important;min-height: unset !important; border:none;}
+.marginminds-admin-settings input:focus{ box-shadow: none; outline: none;}

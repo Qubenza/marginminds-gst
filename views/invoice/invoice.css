@@ -1,0 +1,137 @@
+/*
+ * Invoice stylesheet — loaded by Invoice_Generator::render().
+ *
+ * @package Marginminds
+ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #333;
+	background: #fff;
+	padding: 24px;
+}
+
+.inv-wrap { max-width: 800px; margin: 0 auto; }
+
+/* Header */
+.inv-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	border-bottom: 2px solid #333;
+	padding-bottom: 16px;
+	margin-bottom: 20px;
+}
+.inv-store h1 { font-size: 20px; font-weight: bold; margin-bottom: 4px; }
+.inv-store p  { margin: 2px 0; }
+
+.inv-meta { text-align: right; }
+.inv-meta .inv-title {
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #444;
+	margin-bottom: 6px;
+}
+.inv-meta table { margin-left: auto; }
+.inv-meta td { padding: 2px 4px; }
+.inv-meta td:first-child { color: #666; text-align: right; }
+.inv-meta td:last-child   { font-weight: bold; text-align: left; padding-left: 12px; }
+
+/* Addresses */
+.inv-parties {
+	display: flex;
+	gap: 24px;
+	margin-bottom: 20px;
+}
+.inv-party { flex: 1; }
+.inv-party h3 {
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	color: #888;
+	margin-bottom: 6px;
+	border-bottom: 1px solid #e4e4e4;
+	padding-bottom: 4px;
+}
+.inv-party address { font-style: normal; line-height: 1.6; }
+
+/* Items table */
+.inv-items {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 0;
+}
+.inv-items th, .inv-items td {
+	border: 1px solid #e4e4e4;
+	padding: 7px 10px;
+	text-align: left;
+}
+.inv-items thead th {
+	background: #f5f5f5;
+	font-weight: bold;
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #555;
+}
+.inv-items tbody tr:nth-child(even) { background: #fafafa; }
+.inv-items .col-qty, .inv-items .col-rate, .inv-items .col-taxable,
+.inv-items .col-cgst, .inv-items .col-sgst, .inv-items .col-igst,
+.inv-items .col-total { text-align: right; }
+
+/* Totals */
+.inv-totals-wrap {
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 0;
+}
+.inv-totals {
+	width: 300px;
+	border-collapse: collapse;
+	border: 1px solid #e4e4e4;
+}
+.inv-totals td {
+	padding: 6px 10px;
+	border-bottom: 1px solid #e4e4e4;
+}
+.inv-totals td:last-child { text-align: right; font-weight: bold; }
+.inv-totals .inv-grand-total td {
+	background: #f5f5f5;
+	font-weight: bold;
+	font-size: 14px;
+	border-top: 2px solid #333;
+}
+
+/* Footer */
+.inv-footer {
+	margin-top: 32px;
+	padding-top: 12px;
+	border-top: 1px solid #e4e4e4;
+	font-size: 12px;
+	color: #666;
+	text-align: center;
+}
+
+/* Print button — hidden when printing */
+.inv-print-btn {
+	display: block;
+	margin: 20px auto 0;
+	padding: 10px 28px;
+	background: #333;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	font-size: 14px;
+	cursor: pointer;
+}
+.inv-print-btn:hover { background: #555; }
+
+@media print {
+	body { padding: 0; }
+	.inv-print-btn { display: none !important; }
+	@page { margin: 15mm; }
+}

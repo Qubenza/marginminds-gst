@@ -1,0 +1,17 @@
+{
+  "name": "woocommerce/marginminds-gst",
+  "description": "MarginMinds – GST & Tax Invoice for WooCommerce",
+  "type": "wordpress-plugin",
+  "autoload": {
+    "psr-4": {
+      "Gst\\Marginminds\\": "src/"
+    },
+    "classmap": [
+      "src/tax_admin/",
+      "src/class-plugin.php"
+    ]
+  },
+  "require": {
+    "php": ">=7.4"
+  }
+}

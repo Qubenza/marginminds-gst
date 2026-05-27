@@ -1,0 +1,300 @@
+# Copyright (C) 2025 Qubenza
+# This file is distributed under the same license as the GstMarginminds plugin.
+# GstMarginminds – Tax Invoice for WooCommerce
+# https://marginminds.com/
+msgid ""
+msgstr ""
+"Project-Id-Version: GstMarginminds 1.0.0\n"
+"Report-Msgid-Bugs-To: https://marginminds.com/\n"
+"POT-Creation-Date: 2025-05-12T00:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: GstMarginminds POT Generator\n"
+"X-Domain: marginminds\n"
+
+#: marginminds.php:111
+msgid "GstMarginminds requires WooCommerce to be installed and active."
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:48
+msgid "Marginminds - Woocommerce"
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:49
+msgid "GST - Marginminds"
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:59
+#: src/tax_admin/class-admin-page.php:60
+msgid "Dashboard"
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:68
+#: src/tax_admin/class-admin-page.php:69
+msgid "Invoices"
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:77
+#: src/tax_admin/class-admin-page.php:78
+msgid "Reports"
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:86
+#: src/tax_admin/class-admin-page.php:87
+msgid "Settings"
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:95
+#: src/tax_admin/class-admin-page.php:96
+msgid "Premium Features"
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:151
+#: src/tax_admin/class-admin-page.php:176
+msgid "You do not have access to this page."
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:164
+#: src/tax_admin/class-admin-page.php:184
+msgid "Due to some technical error page failed to render contact support"
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:198
+msgid "Upgrade to GST Marginminds Pro"
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:201
+msgid "Advanced GST Reports"
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:202
+msgid "HSN / SAC Support"
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:203
+msgid "Export CSV / Excel"
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:204
+msgid "Advanced PDF Invoices"
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:205
+msgid "B2B / B2C GST Handling"
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:206
+msgid "Priority Support"
+msgstr ""
+
+#: src/tax_admin/class-admin-page.php:210
+msgid "Upgrade Now"
+msgstr ""
+
+#: src/tax_admin/class-ajax-endpoint.php:44
+msgid "Security check failed."
+msgstr ""
+
+#: src/tax_admin/class-ajax-endpoint.php:49
+msgid "You do not have permission to save settings."
+msgstr ""
+
+#: src/tax_admin/class-ajax-endpoint.php:57
+msgid "Invalid settings data."
+msgstr ""
+
+#: src/tax_admin/class-ajax-endpoint.php:63
+msgid "Settings saved successfully."
+msgstr ""
+
+#: src/checkout/class-checkout-fields.php:90
+#: src/checkout/class-checkout-fields.php:173
+#: src/checkout/class-checkout-fields.php:193
+msgid "GSTIN"
+msgstr ""
+
+#: src/checkout/class-checkout-fields.php:91
+msgid "e.g. 33ABCDE1234F1Z5"
+msgstr ""
+
+#: src/checkout/class-checkout-fields.php:115
+msgid "Please enter your GSTIN."
+msgstr ""
+
+#: src/checkout/class-checkout-fields.php:124
+msgid "The GSTIN you entered is not valid. Please check the format and try again."
+msgstr ""
+
+#: src/checkout/class-checkout-fields.php:169
+msgid "GST Details"
+msgstr ""
+
+#: src/frontend/class-display.php:129
+msgid "(incl. %s%% GST)"
+msgstr ""
+
+#: src/frontend/class-display.php:135
+msgid "+%s%% GST"
+msgstr ""
+
+#: src/frontend/class-display.php:202
+#: src/orders/class-order-meta.php:256
+#: src/gst/class-tax-manager.php:296
+#: src/emails/class-email-handler.php:137
+#: src/emails/class-email-handler.php:214
+#: views/invoice/invoice-template.php:293
+msgid "CGST (%s%%)"
+msgstr ""
+
+#: src/frontend/class-display.php:204
+#: src/orders/class-order-meta.php:258
+#: src/gst/class-tax-manager.php:301
+#: src/emails/class-email-handler.php:153
+#: src/emails/class-email-handler.php:219
+#: views/invoice/invoice-template.php:307
+msgid "SGST (%s%%)"
+msgstr ""
+
+#: src/frontend/class-display.php:207
+#: src/orders/class-order-meta.php:273
+#: src/gst/class-tax-manager.php:306
+#: src/emails/class-email-handler.php:170
+#: src/emails/class-email-handler.php:227
+#: views/invoice/invoice-template.php:322
+msgid "IGST (%s%%)"
+msgstr ""
+
+#: src/frontend/class-display.php:211
+#: src/emails/class-email-handler.php:125
+#: src/emails/class-email-handler.php:208
+msgid "GST Summary"
+msgstr ""
+
+#: src/frontend/class-display.php:230
+#: src/frontend/class-display.php:282
+#: src/emails/class-email-handler.php:183
+#: src/emails/class-email-handler.php:233
+msgid "Total GST"
+msgstr ""
+
+#: src/invoice/class-invoice-manager.php:105
+msgid "Invalid invoice request."
+msgstr ""
+
+#: src/invoice/class-invoice-manager.php:111
+msgid "Order not found."
+msgstr ""
+
+#: src/invoice/class-invoice-manager.php:116
+msgid "Invalid order key."
+msgstr ""
+
+#: src/invoice/class-invoice-manager.php:122
+msgid "You do not have permission to view this invoice."
+msgstr ""
+
+#: src/invoice/class-invoice-manager.php:145
+#: src/invoice/class-invoice-manager.php:176
+msgid "Download Invoice"
+msgstr ""
+
+#: src/invoice/class-invoice-manager.php:168
+msgid "Download Invoice: %s"
+msgstr ""
+
+#: src/invoice/class-invoice-manager.php:193
+msgid "View Invoice"
+msgstr ""
+
+#: views/admin/admin-dashboard.php:17
+msgid "GST-Marginminds Dashboard"
+msgstr ""
+
+#: views/admin/admin-settings.php:24
+msgid "GST-Marginminds Settings"
+msgstr ""
+
+#: views/invoice/invoice-template.php:40
+msgid "Invoice %s"
+msgstr ""
+
+#. translators: %s: Store GSTIN
+#: views/invoice/invoice-template.php:186
+#: views/invoice/invoice-template.php:220
+msgid "GSTIN: %s"
+msgstr ""
+
+#: views/invoice/invoice-template.php:194
+msgid "Tax Invoice"
+msgstr ""
+
+#: views/invoice/invoice-template.php:197
+msgid "Invoice No."
+msgstr ""
+
+#: views/invoice/invoice-template.php:201
+msgid "Invoice Date"
+msgstr ""
+
+#: views/invoice/invoice-template.php:205
+msgid "Order No."
+msgstr ""
+
+#: views/invoice/invoice-template.php:215
+msgid "Billed To"
+msgstr ""
+
+#: views/invoice/invoice-template.php:217
+msgid "—"
+msgstr ""
+
+#: views/invoice/invoice-template.php:227
+msgid "Shipped To"
+msgstr ""
+
+#: views/invoice/invoice-template.php:238
+msgid "Item"
+msgstr ""
+
+#: views/invoice/invoice-template.php:239
+msgid "Qty"
+msgstr ""
+
+#: views/invoice/invoice-template.php:240
+msgid "Rate"
+msgstr ""
+
+#: views/invoice/invoice-template.php:241
+msgid "Amount"
+msgstr ""
+
+#. translators: %s: Product SKU
+#: views/invoice/invoice-template.php:259
+msgid "SKU: %s"
+msgstr ""
+
+#: views/invoice/invoice-template.php:274
+msgid "Subtotal"
+msgstr ""
+
+#: views/invoice/invoice-template.php:280
+msgid "Shipping"
+msgstr ""
+
+#: views/invoice/invoice-template.php:335
+msgid "Discount"
+msgstr ""
+
+#: views/invoice/invoice-template.php:341
+msgid "Total"
+msgstr ""
+
+#: views/invoice/invoice-template.php:354
+msgid "Print / Save as PDF"
+msgstr ""

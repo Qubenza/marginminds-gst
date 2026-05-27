@@ -1,0 +1,29 @@
+# Composer
+vendor/
+
+# npm / Node
+views/node_modules/
+
+# Build artefacts — keep assets/js/marginminds_admin.js (compiled bundle shipped with plugin)
+views/dist/
+
+# WordPress.org submission zip
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+
+# PHP CS cache
+.phpcs-cache
+.phpcs.xml.cache
