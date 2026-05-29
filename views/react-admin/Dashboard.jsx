@@ -110,7 +110,7 @@ function Dashboard({ version, settings }) {
       </Box>
 
       <Typography variant="caption" color="text.secondary" sx={{ display: 'block', mt: 3 }}>
-        GstMarginminds v{version}
+        Marginminds GST v{version}
       </Typography>
 
     </Box>

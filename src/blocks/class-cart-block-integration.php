@@ -61,11 +61,11 @@ class Cart_Block_Integration {
 			return;
 		}
 
-		$version = defined( 'GST_MM_VERSION' ) ? GST_MM_VERSION : false;
+		$version = defined( 'MMSGST_VERSION' ) ? MMSGST_VERSION : false;
 
 		wp_enqueue_script(
 			'marginminds-cart',
-			GST_MM_URL . 'assets/js/marginminds_front.js',
+			MMSGST_URL . 'assets/js/marginminds_front.js',
 			array(
 				'wp-plugins',
 				'wp-element',
@@ -81,7 +81,7 @@ class Cart_Block_Integration {
 
 		wp_localize_script(
 			'marginminds-cart',
-			'gstmarginmindsSettings',
+			'MMSGSTSettings',
 			array(
 				'showOnCart'     => ! empty( $this->settings['show_gst_on_cart'] ),
 				'showOnCheckout' => ! empty( $this->settings['show_gst_on_checkout'] ),

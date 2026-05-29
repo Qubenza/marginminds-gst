@@ -183,9 +183,9 @@ class Plugin {
 			static function () {
 				wp_enqueue_style(
 					'gst-marginminds-frontend',
-					GST_MM_URL . 'assets/css/gst-marginminds-frontend.css',
+					MMSGST_URL . 'assets/css/gst-marginminds-frontend.css',
 					array(),
-					defined( 'GST_MM_VERSION' ) ? GST_MM_VERSION : false
+					defined( 'MMSGST_VERSION' ) ? MMSGST_VERSION : false
 				);
 			}
 		);

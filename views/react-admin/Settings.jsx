@@ -111,9 +111,9 @@ function isValidGstin(value) {
 }
 
 function App({ saveAction, initialSettings }) {
-  const GstMarginminds = window.GstMarginminds || {};
+  const MMSGSTAdmin = window.MMSGSTAdmin || {};
   const [tabValue, setTabValue] = useState(0);
-  const [settings, setSettings] = useState({ ...defaultSettings, ...(initialSettings || GstMarginminds.settings || {}) });
+  const [settings, setSettings] = useState({ ...defaultSettings, ...(initialSettings || MMSGSTAdmin.settings || {}) });
   const [saving, setSaving] = useState(false);
   const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: 'success' });
   const [gstinError, setGstinError] = useState('');
@@ -137,9 +137,9 @@ function App({ saveAction, initialSettings }) {
     try {
       const formData = new FormData();
       formData.append('action', saveAction || 'marginminds_gst_save_settings');
-      formData.append('nonce', GstMarginminds.nonce || '');
+      formData.append('nonce', MMSGSTAdmin.nonce || '');
       formData.append('settings', JSON.stringify(settings));
-      const response = await fetch(GstMarginminds.ajax_url || '/wp-admin/admin-ajax.php', {
+      const response = await fetch(MMSGSTAdmin.ajax_url || '/wp-admin/admin-ajax.php', {
         method: 'POST',
         body: formData,
       });

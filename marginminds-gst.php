@@ -23,28 +23,28 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Plugin version.
  */
-if ( ! defined( 'GST_MM_VERSION' ) ) {
-	define( 'GST_MM_VERSION', '1.0.0' );
+if ( ! defined( 'MMSGST_VERSION' ) ) {
+	define( 'MMSGST_VERSION', '1.0.0' );
 }
 
 /**
  * Plugin directory.
  */
-if ( ! defined( 'GST_MM_DIR' ) ) {
-	define( 'GST_MM_DIR', plugin_dir_path( __FILE__ ) );
+if ( ! defined( 'MMSGST_DIR' ) ) {
+	define( 'MMSGST_DIR', plugin_dir_path( __FILE__ ) );
 }
 
 /**
  * Plugin URL.
  */
-if ( ! defined( 'GST_MM_URL' ) ) {
-	define( 'GST_MM_URL', plugin_dir_url( __FILE__ ) );
+if ( ! defined( 'MMSGST_URL' ) ) {
+	define( 'MMSGST_URL', plugin_dir_url( __FILE__ ) );
 }
 
 /**
  * Composer autoloader (preferred).
  */
-$marginminds_gst_autoloader = GST_MM_DIR . 'vendor/autoload.php';
+$marginminds_gst_autoloader = MMSGST_DIR . 'vendor/autoload.php';
 if ( file_exists( $marginminds_gst_autoloader ) ) {
 	require_once $marginminds_gst_autoloader;
 } else {
@@ -88,7 +88,7 @@ if ( file_exists( $marginminds_gst_autoloader ) ) {
 
 			// Convert class segment to kebab-case filename: - replace underscores with hyphen - lower-case - prefix with "class-".
 			$filename = 'class-' . str_replace( '_', '-', strtolower( $class_segment ) ) . '.php';
-			$path     = GST_MM_DIR . 'src/';
+			$path     = MMSGST_DIR . 'src/';
 			if ( ! empty( $folders ) ) {
 				$path .= implode( '/', $folders ) . '/';
 			}
@@ -108,7 +108,7 @@ if ( file_exists( $marginminds_gst_autoloader ) ) {
  */
 function marginminds_gst_missing_woocommerce_notice(): void {
 	echo '<div class="notice notice-error"><p>' .
-		esc_html__( 'GstMarginminds requires WooCommerce to be installed and active.', 'marginminds-gst' ) .
+		esc_html__( 'Marginminds GST requires WooCommerce to be installed and active.', 'marginminds-gst' ) .
 		'</p></div>';
 }
 

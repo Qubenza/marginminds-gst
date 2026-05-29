@@ -130,9 +130,9 @@ class Invoice_Generator {
 		// wp_styles()->do_items() without going through wp_head().
 		wp_register_style(
 			'gst-mm-invoice',
-			GST_MM_URL . 'views/invoice/invoice.css',
+			MMSGST_URL . 'views/invoice/invoice.css',
 			array(),
-			GST_MM_VERSION
+			MMSGST_VERSION
 		);
 		wp_enqueue_style( 'gst-mm-invoice' );
 
@@ -144,7 +144,7 @@ class Invoice_Generator {
 		$business_state_name = $this->tax_manager->state_name_from_code( $settings['business_state'] );
 
 		ob_start();
-		include GST_MM_DIR . 'views/invoice/invoice-template.php';
+		include MMSGST_DIR . 'views/invoice/invoice-template.php';
 		return (string) ob_get_clean();
 	}
 }

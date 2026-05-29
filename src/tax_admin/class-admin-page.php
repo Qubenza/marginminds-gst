@@ -103,23 +103,23 @@ class Admin_Page {
 			return;
 		}
 
-		$version = defined( 'GST_MM_VERSION' ) ? GST_MM_VERSION : false;
+		$version = defined( 'MMSGST_VERSION' ) ? MMSGST_VERSION : false;
 		wp_enqueue_style(
 			'marginminds-gst-admin-css',
-			GST_MM_URL . 'assets/css/marginminds-gst-admin.css',
+			MMSGST_URL . 'assets/css/marginminds-gst-admin.css',
 			array(),
 			$version
 		);
 		wp_enqueue_script(
 			'marginminds-vendors-admin',
-			GST_MM_URL . 'assets/js/vendors-admin.js',
+			MMSGST_URL . 'assets/js/vendors-admin.js',
 			array(),
 			$version,
 			true
 		);
 		wp_enqueue_script(
 			'marginminds-gst-admin-js',
-			GST_MM_URL . 'assets/js/marginminds_admin.js',
+			MMSGST_URL . 'assets/js/marginminds_admin.js',
 			array( 'marginminds-vendors-admin' ),
 			$version,
 			true
@@ -128,7 +128,7 @@ class Admin_Page {
 		// Localize settings for the script.
 		wp_localize_script(
 			'marginminds-gst-admin-js',
-			'GstMarginminds',
+			'MMSGSTAdmin',
 			array(
 				'ajax_url' => admin_url( 'admin-ajax.php' ),
 				'nonce'    => wp_create_nonce( 'marginminds_gst_form_nonce' ),
@@ -151,10 +151,10 @@ class Admin_Page {
 
 		$dashboard_data = array(
 			'settings' => Ajax_Endpoint::get_settings(),
-			'version'  => defined( 'GST_MM_VERSION' ) ? GST_MM_VERSION : '',
+			'version'  => defined( 'MMSGST_VERSION' ) ? MMSGST_VERSION : '',
 		);
 
-		$view = GST_MM_DIR . 'views/admin/admin-dashboard.php';
+		$view = MMSGST_DIR . 'views/admin/admin-dashboard.php';
 		if ( file_exists( $view ) ) {
 			include $view;
 		} else {
@@ -173,7 +173,7 @@ class Admin_Page {
 		if ( ! current_user_can( self::CAPABILITY ) ) {
 			wp_die( esc_html__( 'You do not have access to this page.', 'marginminds-gst' ) );
 		}
-		$view = GST_MM_DIR . 'views/admin/admin-settings.php';
+		$view = MMSGST_DIR . 'views/admin/admin-settings.php';
 		if ( file_exists( $view ) ) {
 			include $view;
 		} else {
@@ -195,7 +195,7 @@ class Admin_Page {
 			wp_die( esc_html__( 'You do not have access to this page.', 'marginminds-gst' ) );
 		}
 
-		$view = GST_MM_DIR . 'views/admin/admin-invoices.php';
+		$view = MMSGST_DIR . 'views/admin/admin-invoices.php';
 		if ( file_exists( $view ) ) {
 			include $view;
 		} else {
@@ -216,7 +216,7 @@ class Admin_Page {
 		}
 
 		$upgrade_url = 'https://marginminds.com/';
-		$view        = GST_MM_DIR . 'views/admin/admin-premium.php';
+		$view        = MMSGST_DIR . 'views/admin/admin-premium.php';
 
 		if ( file_exists( $view ) ) {
 			include $view;

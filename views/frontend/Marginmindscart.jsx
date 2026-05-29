@@ -1,8 +1,8 @@
 const { registerPlugin } = wp.plugins;
-const showOnCart     = gstmarginmindsSettings?.showOnCart     ?? false;
-const isCart = gstmarginmindsSettings?.isCart ?? false;
-const showOnCheckout = gstmarginmindsSettings?.showOnCheckout ?? false;
-const isCheckout = gstmarginmindsSettings?.isCheckout ?? false;
+const showOnCart     = MMSGSTSettings?.showOnCart     ?? false;
+const isCart = MMSGSTSettings?.isCart ?? false;
+const showOnCheckout = MMSGSTSettings?.showOnCheckout ?? false;
+const isCheckout = MMSGSTSettings?.isCheckout ?? false;
 
 const CartGSTTotals = () => {
     const { ExperimentalDiscountsMeta } = wc.blocksCheckout;

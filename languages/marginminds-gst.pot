@@ -1,10 +1,10 @@
 # Copyright (C) 2025 Qubenza
-# This file is distributed under the same license as the GstMarginminds plugin.
-# GstMarginminds – Tax Invoice for WooCommerce
+# This file is distributed under the same license as the Marginminds GST plugin.
+# Marginminds GST – Tax Invoice for WooCommerce
 # https://marginminds.com/
 msgid ""
 msgstr ""
-"Project-Id-Version: GstMarginminds 1.0.0\n"
+"Project-Id-Version: Marginminds GST 1.0.0\n"
 "Report-Msgid-Bugs-To: https://marginminds.com/\n"
 "POT-Creation-Date: 2025-05-12T00:00:00+00:00\n"
 "MIME-Version: 1.0\n"
@@ -15,11 +15,11 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: GstMarginminds POT Generator\n"
+"X-Generator: Marginminds GST POT Generator\n"
 "X-Domain: marginminds\n"
 
 #: marginminds.php:111
-msgid "GstMarginminds requires WooCommerce to be installed and active."
+msgid "Marginminds GST requires WooCommerce to be installed and active."
 msgstr ""
 
 #: src/tax_admin/class-admin-page.php:48

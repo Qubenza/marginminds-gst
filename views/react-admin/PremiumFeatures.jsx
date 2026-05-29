@@ -38,7 +38,7 @@ const features = [
   },
   {
     title: 'Priority Support',
-    description: 'Get dedicated support from the GstMarginminds team with guaranteed response times and live chat access.',
+    description: 'Get dedicated support from the Marginminds GST team with guaranteed response times and live chat access.',
     badge: 'Pro',
   },
 ];
@@ -77,7 +77,7 @@ function PremiumFeatures({ upgradeUrl }) {
       <Box sx={{ mb: 4, textAlign: 'center' }}>
         <Chip label="PRO" color="warning" size="small" sx={{ mb: 1, fontWeight: 'bold', letterSpacing: 1 }} />
         <Typography variant="h4" fontWeight="bold" gutterBottom>
-          Upgrade to GstMarginminds Pro
+          Upgrade to Marginminds GST Pro
         </Typography>
         <Typography variant="subtitle1" color="text.secondary" sx={{ mb: 3 }}>
           Everything you need for GST compliance in India — reports, HSN codes, and branded invoices.
