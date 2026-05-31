@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 <div class="wrap marginminds-admin">
 	<div class="postbox">
 		<div class="inside">
-			<h2 class="hndle"><?php esc_html_e( 'Gst-Marginminds Settings', 'marginminds-gst' ); ?></h2>
+			<h2 class="hndle"><?php esc_html_e( 'Marginminds - GST Settings', 'marginminds-gst' ); ?></h2>
 			<div
 				id="marginminds-settings"
 				data-save-action="<?php echo esc_attr( Ajax_Endpoint::SAVE_ACTION ); ?>"

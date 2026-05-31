@@ -75,9 +75,16 @@ Please open an issue on our support forum. We aim to respond within 48 hours.
 
 == Screenshots ==
 
-1. Settings page — configure your GST details across five tabs.
-2. Dashboard — overview of your store's invoices.
-3. Checkout — GSTIN field shown to customers.
+1. Settings page — Tax configuration.
+2. Settings page — WooCommerce integration.
+3. Dashboard — overview of your settings.
+4. Checkout — GSTIN field shown to customers.
+5. Cart page showing CGST/SGST breakdown.
+6. Checkout page with GST in order summary.
+7. Order received page with GST details and invoice download.
+8. Admin GST invoices list with View and Download options.
+9. GST-compliant tax invoice.
+
 
 == Changelog ==
 

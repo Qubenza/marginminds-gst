@@ -23,7 +23,7 @@ $marginminds_gst_table = new Invoices_List_Table();
 $marginminds_gst_table->prepare_items();
 ?>
 <div class="wrap">
-	<h1 class="wp-heading-inline"><?php esc_html_e( 'GST Invoices', 'marginminds-gst' ); ?></h1>
+	<h1 class="wp-heading-inline"><?php esc_html_e( 'Marginminds - GST Invoices', 'marginminds-gst' ); ?></h1>
 	<hr class="wp-header-end">
 	<form method="get">
 		<input type="hidden" name="page" value="<?php echo esc_attr( $marginminds_gst_page ); ?>">
