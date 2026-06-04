@@ -46,7 +46,7 @@ class Admin_Page {
 	public function add_admin_menu(): void {
 		add_menu_page(
 			__( 'Marginminds - Woocommerce', 'marginminds-gst' ),
-			__( 'Marginminds - GST', 'marginminds-gst' ),
+			__( 'MM - GST', 'marginminds-gst' ),
 			self::CAPABILITY,
 			self::MENU_SLUG,
 			array( $this, 'render_dashboard' ),
