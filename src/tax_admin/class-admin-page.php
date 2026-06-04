@@ -50,7 +50,7 @@ class Admin_Page {
 			self::CAPABILITY,
 			self::MENU_SLUG,
 			array( $this, 'render_dashboard' ),
-			'dashicons-admin-generic',
+			'dashicons-money-alt',
 			26
 		);
 		// Dashboard submenu.
